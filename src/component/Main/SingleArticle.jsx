@@ -9,24 +9,30 @@ export const SingleArticle = ({ loggedInUser }) => {
   const [singleArticle, setSingleArticle] = useState();
   const [comments, setComments] = useState();
   const { article_id } = useParams();
+  const [articleLoading, setArticleLoading] = useState(true);
+  const [commentsLoading, setCommentsLoading] = useState(true);
 
   useEffect(() => {
+    setArticleLoading(true);
     getArticleById(article_id).then((singleArticleData) => {
       setSingleArticle(singleArticleData);
+       setArticleLoading(false);
     });
   }, [article_id]);
 
   useEffect(() => {
+    setCommentsLoading(true);
     getCommentsByArticleId(article_id).then((articleComments) => {
       setComments(articleComments);
       console.log(articleComments);
+      setCommentsLoading(false);
     });
   }, [article_id]);
 
   return (
     <div>
       {" "}
-      {singleArticle ? (
+      {!articleLoading ? (
         <SingleArticleCard
           singleArticle={singleArticle}
           setSingleArticle={setSingleArticle}
@@ -34,7 +40,7 @@ export const SingleArticle = ({ loggedInUser }) => {
       ) : (
         <p>Loading…</p>
       )}{" "}
-      {comments ? (
+      {!commentsLoading && (
         <ul className="comment__ul">
           {comments.map((comment) => {
             return (
@@ -48,9 +54,8 @@ export const SingleArticle = ({ loggedInUser }) => {
             );
           })}
         </ul>
-      ) : (
-        <p>Loading…</p>
-      )}
+      )  
+      }
     </div>
   );
 };
