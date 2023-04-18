@@ -1,21 +1,19 @@
 import { useEffect, useState } from "react";
 import { ArticleCard } from "./ArticleCard";
-
+import { getArticles } from "../utils/api";
 
 function Articles() {
   const [articles, setArticles] = useState();
 
   useEffect(() => {
-    fetch("https://be-news-project-3e8t.onrender.com/api/articles")
-      .then((response) => response.json())
-      .then((body) => setArticles(body));
+    getArticles().then((body) => setArticles(body));
   }, []);
 
   return (
     <div>
       {articles ? (
         <ul className="article__cards">
-          {articles.articles.map((article) => {
+          {articles.map((article) => {
             return (
               <li key={article.article_id}>
                 <ArticleCard

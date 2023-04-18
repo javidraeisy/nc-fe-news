@@ -1,0 +1,12 @@
+import axios from "axios";
+
+const newsApi = axios.create({
+  baseURL: "https://be-news-project-3e8t.onrender.com/api",
+});
+
+export const getArticles = () => {
+  return newsApi.get("/articles").then(({ data }) => {
+    // console.log(data.articles);
+    return data.articles;
+  });
+};
