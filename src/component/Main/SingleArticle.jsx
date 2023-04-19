@@ -24,13 +24,12 @@ export const SingleArticle = ({ loggedInUser }) => {
     setCommentsLoading(true);
     getCommentsByArticleId(article_id).then((articleComments) => {
       setComments(articleComments);
-      console.log(articleComments);
       setCommentsLoading(false);
     });
   }, [article_id]);
 
   return (
-    <div>
+    <>
       {" "}
       {!articleLoading ? (
         <SingleArticleCard
@@ -54,8 +53,7 @@ export const SingleArticle = ({ loggedInUser }) => {
             );
           })}
         </ul>
-      )  
-      }
-    </div>
+      )}
+    </>
   );
 };
