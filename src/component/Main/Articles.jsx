@@ -4,14 +4,19 @@ import { getArticles } from "../utils/api";
 
 function Articles() {
   const [articles, setArticles] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
 
   useEffect(() => {
-    getArticles().then((body) => setArticles(body));
+     setIsLoading(true);
+    getArticles().then((body) => {setArticles(body);
+    setIsLoading(false);}
+    );
   }, []);
 
   return (
     <div>
-      {articles ? (
+      {!isLoading ? (
         <ul className="article__cards">
           {articles.map((article) => {
             return (
