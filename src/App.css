@@ -83,7 +83,7 @@
 .section__single_article {
   margin-left: 10%;
   margin-right: 10%;
-  background-color:skyblue;
+  background-color: skyblue;
   border-radius: 10px;
 }
 
@@ -108,4 +108,14 @@
   list-style-type: none;
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.button__upvote {
+  color: rgb(37, 41, 255);
+  cursor: pointer;
+}
+
+.button__downvote {
+  color: rgb(255, 76, 53);
+  cursor: pointer;
 }
