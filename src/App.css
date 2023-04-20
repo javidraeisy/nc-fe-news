@@ -150,3 +150,19 @@
   margin-left: 1rem;
   margin-right: 1rem;
 }
+
+.comment_adder {
+  background-color: burlywood;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.button_comment_adder {
+  margin-left: 90%;
+}
+
+.textarea__new_comment {
+  width: 85%;
+  margin-left: 10%;
+  height: 5rem;
+}

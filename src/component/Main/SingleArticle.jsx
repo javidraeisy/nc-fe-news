@@ -4,6 +4,7 @@ import { SingleArticleCard } from "./SingleArticleCard";
 import { getArticleById } from "../utils/api";
 import { Comments } from "./Comments";
 import { getCommentsByArticleId } from "../utils/api";
+import { CommentAdder } from "./CommentAdder";
 
 export const SingleArticle = ({ loggedInUser }) => {
   const [singleArticle, setSingleArticle] = useState();
@@ -39,6 +40,11 @@ export const SingleArticle = ({ loggedInUser }) => {
       ) : (
         <p>Loading…</p>
       )}{" "}
+      <CommentAdder
+        article_id={article_id}
+        setComments={setComments}
+        loggedInUser={loggedInUser}
+      />
       {!commentsLoading && (
         <ul className="comment__ul">
           {comments.map((comment) => {
