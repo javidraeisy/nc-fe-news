@@ -144,4 +144,9 @@
   color: #ff4c35;
 }
 
-
+.article__number {
+  background-color: aqua;
+  font-size: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}

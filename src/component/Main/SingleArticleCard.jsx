@@ -42,7 +42,11 @@ export const SingleArticleCard = ({
           >
             <i className="fa-regular fa-thumbs-up"></i>
           </button>
-          {votes + userUpvote + userDownvote}
+          <span className="article__number">
+          
+            {votes + userUpvote + userDownvote}
+            
+          </span>
           <button
             className="button__downvote"
             onClick={() =>
