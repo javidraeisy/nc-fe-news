@@ -22,3 +22,7 @@ export const getCommentsByArticleId = (article_id) => {
     return data.articleComments;
   });
 };
+
+export const patchArticleVote = (article_id, incrementVote) => {
+  return newsApi.patch(`/articles/${article_id}`, { inc_votes: incrementVote });
+};

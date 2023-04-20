@@ -83,7 +83,7 @@
 .section__single_article {
   margin-left: 10%;
   margin-right: 10%;
-  background-color:skyblue;
+  background-color: skyblue;
   border-radius: 10px;
 }
 
@@ -108,4 +108,45 @@
   list-style-type: none;
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.button__upvote {
+  color: #2176ff;
+  cursor: pointer;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  border: 2px solid #2176ff;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.button__upvote:hover {
+  background-color: #2176ff;
+  color: #2176ff;
+}
+
+.button__downvote {
+  color: #ff4c35;
+  cursor: pointer;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  border: 2px solid #ff4c35;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.button__downvote:hover {
+  background-color: #ff4c35;
+  color: #ff4c35;
+}
+
+.article__number {
+  background-color: aqua;
+  font-size: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
