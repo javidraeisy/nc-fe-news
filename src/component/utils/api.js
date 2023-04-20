@@ -23,10 +23,6 @@ export const getCommentsByArticleId = (article_id) => {
   });
 };
 
-export const patchArticleUpvote = (article_id) => {
-  return newsApi.patch(`/articles/${article_id}`, { inc_votes: 1 });
-};
-
-export const patchArticleDownvote = (article_id) => {
-  return newsApi.patch(`/articles/${article_id}`, { inc_votes: -1 });
+export const patchArticleVote = (article_id, incrementVote) => {
+  return newsApi.patch(`/articles/${article_id}`, { inc_votes: incrementVote });
 };

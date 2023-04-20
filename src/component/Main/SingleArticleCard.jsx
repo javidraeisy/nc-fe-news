@@ -36,23 +36,21 @@ export const SingleArticleCard = ({
           <button
             className="button__upvote"
             onClick={() =>
-              handleSingleArticleUpvote(article_id, setUserUpvote, setErr)
+              handleSingleArticleUpvote(article_id, setUserUpvote, setErr, userUpvote)
             }
-            disabled={userUpvote !== 0}
+            // disabled={userUpvote !== 0}
           >
             <i className="fa-regular fa-thumbs-up"></i>
           </button>
           <span className="article__number">
-          
             {votes + userUpvote + userDownvote}
-            
           </span>
           <button
             className="button__downvote"
             onClick={() =>
-              handleSingleArticleDownvote(article_id, setUserDownvote, setErr)
+              handleSingleArticleDownvote(article_id, setUserDownvote, setErr, userDownvote)
             }
-            disabled={userDownvote !== 0}
+            // disabled={userDownvote !== 0}
           >
             <i className="fa-regular fa-thumbs-down"></i>
           </button>
@@ -64,3 +62,4 @@ export const SingleArticleCard = ({
     </section>
   );
 };
+

@@ -1,14 +1,14 @@
-import { patchArticleDownvote, patchArticleUpvote } from "./api";
-
+import { patchArticleVote } from "./api";
 
 export const handleSingleArticleUpvote = (
   article_id,
   setUserUpvote,
-  setErr
+  setErr,
+  userUpvote
 ) => {
   setErr(false);
-  setUserUpvote(1);
-  patchArticleUpvote(article_id).catch(() => {
+  setUserUpvote(userUpvote + 1);
+  patchArticleVote(article_id, 1).catch(() => {
     setUserUpvote(0);
     setErr(true);
   });
@@ -17,11 +17,12 @@ export const handleSingleArticleUpvote = (
 export const handleSingleArticleDownvote = (
   article_id,
   setUserDownvote,
-  setErr
+  setErr,
+  userDownvote
 ) => {
   setErr(false);
-  setUserDownvote(-1);
-  patchArticleDownvote(article_id).catch(() => {
+  setUserDownvote(userDownvote - 1);
+  patchArticleVote(article_id, -1).catch(() => {
     setUserDownvote(0);
     setErr(true);
   });
