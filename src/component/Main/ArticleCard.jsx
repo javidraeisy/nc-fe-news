@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-
-
-
 export const ArticleCard = ({
   article_img_url,
   title,
@@ -26,6 +23,7 @@ export const ArticleCard = ({
       <p className="article__author_and_date">
         By {author} on {date.toLocaleDateString()}
       </p>
+      <span>#{topic}</span>
     </section>
   );
 };
