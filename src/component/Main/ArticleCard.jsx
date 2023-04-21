@@ -12,7 +12,7 @@ export const ArticleCard = ({
   article_id,
   setArticles,
 }) => {
-  const [err, setErr] = useState(null);
+  // const [err, setErr] = useState(null);
   const date = new Date(created_at);
   return (
     <section className="section__article">
